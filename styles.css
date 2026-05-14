@@ -56,14 +56,18 @@ nav {
 }
 
 .nav-logo-img {
-  height: 36px;
+  height: 28px;
+  max-height: 28px;
   width: auto;
   border-radius: 10px;
+  display: block;
 }
 
 .nav-logo-tipo {
-  height: 22px;
+  height: 16px;
+  max-height: 16px;
   width: auto;
+  display: block;
 }
 
 .app-screenshot {
@@ -75,8 +79,6 @@ nav {
   z-index: 1;
 }
 
-=======
->>>>>>> d254c8a1a86eb88efd65e0a45c1da15cb53d216a
 .nav-right { display: flex; align-items: center; gap: 16px; }
 
 .lang-toggle {
