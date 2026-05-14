@@ -55,6 +55,7 @@ nav {
   font-size: 18px;
 }
 
+<<<<<<< HEAD
 .nav-logo-img {
   height: 36px;
   width: auto;
@@ -75,6 +76,8 @@ nav {
   z-index: 1;
 }
 
+=======
+>>>>>>> d254c8a1a86eb88efd65e0a45c1da15cb53d216a
 .nav-right { display: flex; align-items: center; gap: 16px; }
 
 .lang-toggle {
