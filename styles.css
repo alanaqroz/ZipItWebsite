@@ -2,14 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:          #100b2e;
-  --bg2:         #1a1245;
+  --bg:          #0e0a28;
+  --bg2:         #160e38;
   --card:        rgba(255,255,255,0.06);
   --card-border: rgba(255,255,255,0.10);
-  --accent:      #b5f23d;
-  --accent-dim:  #8ec42d;
-  --purple:      #7c5cbf;
-  --purple-lt:   #a07de0;
+  --accent:      #CCEF36;
+  --accent-hover:#B4D330;
+  --accent-light:#E7FF82;
+  --accent-dim:  #B4D330;
+  --purple:      #876FEE;
+  --purple-lt:   #D2D1FF;
+  --purple-dark: #4F33A4;
   --white:       #ffffff;
   --muted:       rgba(255,255,255,0.55);
   --radius:      20px;
@@ -36,7 +39,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 16px 24px;
   display: flex; align-items: center; justify-content: space-between;
-  background: rgba(16,11,46,0.80);
+  background: rgba(14,10,40,0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--card-border);
 }
@@ -55,16 +58,19 @@ nav {
   font-size: 18px;
 }
 
-<<<<<<< HEAD
 .nav-logo-img {
-  height: 36px;
+  height: 28px;
+  max-height: 28px;
   width: auto;
   border-radius: 10px;
+  display: block;
 }
 
 .nav-logo-tipo {
-  height: 22px;
+  height: 16px;
+  max-height: 16px;
   width: auto;
+  display: block;
 }
 
 .app-screenshot {
@@ -76,8 +82,6 @@ nav {
   z-index: 1;
 }
 
-=======
->>>>>>> d254c8a1a86eb88efd65e0a45c1da15cb53d216a
 .nav-right { display: flex; align-items: center; gap: 16px; }
 
 .lang-toggle {
@@ -116,8 +120,8 @@ nav {
   content: "";
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(124,92,191,.35) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(181,242,61,.12) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(135,111,238,.38) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(204,239,54,.14) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -129,7 +133,7 @@ nav {
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(181,242,61,.12); border: 1px solid rgba(181,242,61,.25);
+  background: rgba(204,239,54,.12); border: 1px solid rgba(204,239,54,.3);
   border-radius: 30px; padding: 6px 16px;
   font-size: 13px; color: var(--accent); font-weight: 600;
   margin-bottom: 24px;
@@ -153,9 +157,9 @@ nav {
   padding: 16px 32px; border-radius: 50px;
   background: var(--accent); color: #000;
   font-weight: 800; font-size: 16px;
-  text-decoration: none; transition: transform .2s, opacity .2s;
+  text-decoration: none; transition: transform .2s, background .2s;
 }
-.btn-primary:hover { transform: translateY(-2px); opacity: .9; }
+.btn-primary:hover { transform: translateY(-2px); background: var(--accent-hover); }
 
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
@@ -185,8 +189,8 @@ nav {
 .phone-wrap::before {
   content: "";
   position: absolute;
-  width: 320px; height: 320px;
-  background: radial-gradient(ellipse, rgba(124,92,191,.4), transparent 70%);
+  width: 340px; height: 340px;
+  background: radial-gradient(ellipse, rgba(135,111,238,.45), transparent 70%);
   border-radius: 50%;
 }
 
@@ -222,7 +226,7 @@ nav {
 .phone-dates  { font-size: 9px; color: var(--muted); }
 
 .phone-weather {
-  background: rgba(124,92,191,.4); border-radius: 12px;
+  background: rgba(135,111,238,.4); border-radius: 12px;
   padding: 8px 12px; display: flex; justify-content: space-between;
   align-items: center; font-size: 10px;
 }
@@ -296,15 +300,15 @@ nav {
 }
 .feature-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(181,242,61,.3);
+  border-color: rgba(204,239,54,.35);
 }
 
 .feature-icon {
   width: 52px; height: 52px; border-radius: 14px;
-  background: rgba(124,92,191,.25);
+  background: rgba(135,111,238,.22);
   display: flex; align-items: center; justify-content: center;
   font-size: 24px; margin-bottom: 20px;
-  border: 1px solid rgba(124,92,191,.3);
+  border: 1px solid rgba(135,111,238,.35);
 }
 
 .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
@@ -313,7 +317,7 @@ nav {
 /* ── HOW IT WORKS ─────────────────────────────────── */
 #how {
   padding: 100px 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(124,92,191,.06) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(135,111,238,.07) 50%, transparent 100%);
 }
 
 .steps {
@@ -363,12 +367,12 @@ nav {
 
 .pricing-card.featured {
   border-color: var(--accent);
-  background: rgba(181,242,61,.06);
+  background: rgba(204,239,54,.06);
 }
 .pricing-card.featured::before {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at top, rgba(181,242,61,.12), transparent 60%);
+  background: radial-gradient(ellipse at top, rgba(204,239,54,.13), transparent 60%);
   pointer-events: none;
 }
 
@@ -423,7 +427,7 @@ nav {
 #cta::before {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(124,92,191,.2), transparent 70%);
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(135,111,238,.22), transparent 70%);
   pointer-events: none;
 }
 
@@ -445,11 +449,55 @@ nav {
 
 .cta-badge-pill {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(181,242,61,.12); border: 1px solid rgba(181,242,61,.25);
+  background: rgba(204,239,54,.12); border: 1px solid rgba(204,239,54,.3);
   border-radius: 30px; padding: 6px 18px;
   font-size: 13px; color: var(--accent); font-weight: 700;
   margin-bottom: 24px;
 }
+
+/* ── Illustrations strip ───────────────────────────── */
+#illustrations {
+  padding: 60px 0 20px;
+  position: relative; overflow: hidden;
+}
+
+.illus-row {
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+}
+
+.illus-item {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+
+.illus-item img, .illus-item svg {
+  filter: drop-shadow(0 12px 28px rgba(135,111,238,.35));
+  transition: transform .4s ease;
+}
+.illus-item:hover img, .illus-item:hover svg { transform: translateY(-8px) scale(1.05); }
+
+.illus-label {
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  letter-spacing: 1px; text-transform: uppercase;
+}
+
+/* ── App Store badge styled ────────────────────────── */
+.appstore-btn {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: #fff; color: #000;
+  border-radius: 14px; padding: 12px 24px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+}
+.appstore-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(204,239,54,.25);
+}
+.appstore-btn svg { width: 28px; height: 28px; flex-shrink: 0; }
+.appstore-btn .badge-text { line-height: 1.2; }
+.appstore-btn .badge-sub  { font-size: 11px; color: #666; }
+.appstore-btn .badge-name { font-size: 17px; font-weight: 700; }
 
 .store-badges { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
