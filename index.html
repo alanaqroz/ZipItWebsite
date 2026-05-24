@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <nav>
   <a href="#" class="nav-logo">
     <img src="assets/zipitlogo.png" alt="Zip It! logo" class="nav-logo-img" height="28" />
@@ -23,10 +22,11 @@
   </div>
 </nav>
 
+<!-- ── HERO -->
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-      <div>
+      <div class="hero-text">
         <div class="hero-badge">✨ <span data-i18n="hero-badge">Now on the App Store</span></div>
         <h1 class="hero-title" data-i18n="hero-title">Pack smarter.<br>Travel <span class="accent">worry-free.</span></h1>
         <p class="hero-sub" data-i18n="hero-sub">Zip It! creates a personalized packing list based on your destination, weather, trip type, and who's traveling with you — so you never forget a thing.</p>
@@ -46,29 +46,16 @@
         </div>
       </div>
 
-      <!-- Phone mockup -->
-      <div class="phone-wrap">
-        <img src="assets/11- Lista.png" alt="Zip It! app screenshot" class="app-screenshot" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── ILLUSTRATIONS -->
-<section id="illustrations">
-  <div class="container">
-    <div class="illus-row">
-      <div class="illus-item fade-in">
-        <img src="assets/Group 76.svg" alt="Luggage" height="89" />
-      </div>
-      <div class="illus-item fade-in">
-        <img src="assets/Group 89.svg" alt="Travel bag" height="98" />
-      </div>
-      <div class="illus-item fade-in">
-        <img src="assets/Group 90.svg" alt="Globe" height="87" />
-      </div>
-      <div class="illus-item fade-in">
-        <img src="assets/Group 91.svg" alt="Suitcases" height="120" />
+      <div class="hero-visual">
+        <!-- Floating illustration behind phone -->
+        <div class="hero-illus-bg">
+          <img src="assets/Group 91.svg" alt="" class="hero-illus-suitcase" aria-hidden="true" />
+        </div>
+        <div class="phone-wrap">
+          <img src="assets/11- Lista.png" alt="Zip It! app screenshot" class="app-screenshot" />
+        </div>
+        <!-- Small floating suitcase accent -->
+        <img src="assets/Group 76.svg" alt="" class="hero-illus-small" aria-hidden="true" />
       </div>
     </div>
   </div>
@@ -77,10 +64,15 @@
 <!-- ── FEATURES -->
 <section id="features">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-label" data-i18n="feat-label">Features</div>
-      <h2 class="section-title" data-i18n="feat-title">Your trip.<br><span class="accent">Your perfect list.</span></h2>
-      <p class="section-sub" data-i18n="feat-sub">Every detail of your journey considered — from the weather in your destination to who's traveling with you.</p>
+    <div class="features-header fade-in">
+      <div>
+        <div class="section-label" data-i18n="feat-label">Features</div>
+        <h2 class="section-title" data-i18n="feat-title">Your trip.<br><span class="accent">Your perfect list.</span></h2>
+        <p class="section-sub" data-i18n="feat-sub">Every detail of your journey considered — from the weather in your destination to who's traveling with you.</p>
+      </div>
+      <div class="features-illus" aria-hidden="true">
+        <img src="assets/Group 89.svg" alt="" />
+      </div>
     </div>
     <div class="features-grid">
       <div class="feature-card fade-in">
@@ -117,11 +109,13 @@
   </div>
 </section>
 
+<!-- ── HOW IT WORKS -->
 <section id="how">
   <div class="container">
-    <div class="fade-in" style="text-align:center">
+    <div class="how-header fade-in">
       <div class="section-label" data-i18n="how-label">How it works</div>
       <h2 class="section-title" data-i18n="how-title">Ready in <span class="accent">4 simple steps</span></h2>
+      <img src="assets/Group 90.svg" alt="" class="how-illus" aria-hidden="true" />
     </div>
     <div class="steps">
       <div class="step fade-in">
@@ -148,6 +142,7 @@
   </div>
 </section>
 
+<!-- ── PRICING -->
 <section id="pricing">
   <div class="container">
     <div class="fade-in" style="text-align:center">
@@ -167,12 +162,12 @@
           <li data-i18n="plan0-f3">All item categories</li>
           <li data-i18n="plan0-f4">Export & share</li>
         </ul>
-        <button class="btn-plan btn-plan-secondary" data-i18n="plan0-btn">Get started</button>
+        <a href="https://apps.apple.com/us/app/zip-it-travel-packing-list/id6761031657" target="_blank" class="btn-plan btn-plan-secondary" data-i18n="plan0-btn">Get started</a>
       </div>
       <!-- Monthly -->
       <div class="pricing-card fade-in">
         <div class="pricing-name" data-i18n="plan1-name">Monthly</div>
-        <div class="pricing-price">$4<span data-i18n="plan1-price">,90/mo</span></div>
+        <div class="pricing-price">$4<span data-i18n="plan1-price">,99/mo</span></div>
         <div class="pricing-period" data-i18n="plan1-period">Billed monthly</div>
         <ul class="pricing-features">
           <li data-i18n="plan1-f1">Unlimited packing lists</li>
@@ -180,13 +175,13 @@
           <li data-i18n="plan1-f3">Family & group trips</li>
           <li data-i18n="plan1-f4">Priority updates</li>
         </ul>
-        <button class="btn-plan btn-plan-secondary" data-i18n="plan1-btn">Start monthly</button>
+        <a href="https://apps.apple.com/us/app/zip-it-travel-packing-list/id6761031657" target="_blank" class="btn-plan btn-plan-secondary" data-i18n="plan1-btn">Start monthly</a>
       </div>
       <!-- Lifetime -->
       <div class="pricing-card featured fade-in">
         <div class="pricing-badge">⭐ <span data-i18n="plan2-badge">Best Deal</span></div>
         <div class="pricing-name" data-i18n="plan2-name">Lifetime</div>
-        <div class="pricing-price">$49<span>,90</span></div>
+        <div class="pricing-price">$49<span>,99</span></div>
         <div class="pricing-period" data-i18n="plan2-period">One-time payment</div>
         <ul class="pricing-features">
           <li data-i18n="plan2-f1">Everything in Monthly</li>
@@ -194,23 +189,26 @@
           <li data-i18n="plan2-f3">No recurring fees</li>
           <li data-i18n="plan2-f4">Lifetime access</li>
         </ul>
-        <button class="btn-plan btn-plan-primary" data-i18n="plan2-btn">Get lifetime access</button>
+        <a href="https://apps.apple.com/us/app/zip-it-travel-packing-list/id6761031657" target="_blank" class="btn-plan btn-plan-primary" data-i18n="plan2-btn">Get lifetime access</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ── CTA -->
 <section id="cta">
   <div class="container">
     <div class="cta-box fade-in">
-      <div class="cta-badge-pill">
-        ✅ <span data-i18n="cta-badge">Available Now</span>
-      </div>
-      <h2 data-i18n="cta-title">Start packing smarter<br><span class="accent">today. For free.</span></h2>
-      <p data-i18n="cta-sub">Download Zip It! on the App Store — your first packing list is completely free.</p>
-      <div class="store-badges">
+      <img src="assets/Group 90.svg" alt="" class="cta-illus cta-illus-left" aria-hidden="true" />
+      <img src="assets/Group 76.svg" alt="" class="cta-illus cta-illus-right" aria-hidden="true" />
+      <div class="cta-content">
+        <div class="cta-badge-pill">
+          ✅ <span data-i18n="cta-badge">Available Now</span>
+        </div>
+        <h2 data-i18n="cta-title">Start packing smarter<br><span class="accent">today. For free.</span></h2>
+        <p data-i18n="cta-sub">Download Zip It! on the App Store — your first packing list is completely free.</p>
         <a href="https://apps.apple.com/us/app/zip-it-travel-packing-list/id6761031657" target="_blank" class="appstore-btn">
-          <svg viewBox="0 0 24 24" fill="#000" xmlns="http://www.w3.org/2000/svg">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="#000" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
           </svg>
           <div class="badge-text">
@@ -227,7 +225,6 @@
   <div class="footer-logo">
     <img src="assets/zipitlogo.png" alt="Zip It! logo" class="nav-logo-img" height="28" />
     <img src="assets/zipittipografia.png" alt="Zip It!" class="nav-logo-tipo" height="18" />
-
   </div>
   <div class="footer-links">
     <a href="https://pond-copper-f2d.notion.site/Privacy-Policy-33ec184f41378005970bf436a8ecf0eb" target="_blank" data-i18n="footer-privacy">Privacy Policy</a>
