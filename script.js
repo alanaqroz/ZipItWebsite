@@ -40,6 +40,20 @@ const i18n = {
     "plan1-f1": "Unlimited packing lists", "plan1-f2": "AI-powered extras", "plan1-f3": "Family & group trips", "plan1-f4": "Priority updates",
     "plan2-badge": "Best Deal", "plan2-name": "Lifetime", "plan2-period": "One-time payment", "plan2-btn": "Get lifetime access",
     "plan2-f1": "Everything in Monthly", "plan2-f2": "All future features", "plan2-f3": "No recurring fees", "plan2-f4": "Lifetime access",
+    "faq-label": "FAQ",
+    "faq-title": "Got questions?<br><span class='accent'>We've got answers.</span>",
+    "faq-q1": "Is Zip It! really free?",
+    "faq-a1": "Yes! Your first packing list is completely free — no credit card required. Upgrade to Monthly or Lifetime whenever you're ready for unlimited lists and AI-powered extras.",
+    "faq-q2": "Does it work without internet?",
+    "faq-a2": "You need internet to generate your list (to fetch weather data and run the AI). Once the list is created, you can check off items completely offline — perfect for when you're already traveling.",
+    "faq-q3": "Does it work for international trips?",
+    "faq-a3": "Absolutely. Zip It! adds passport reminders, travel insurance, adapters, local currency notes, and destination-specific suggestions — everything you need when crossing borders.",
+    "faq-q4": "Can I customize the list?",
+    "faq-a4": "100%. Add your own items, remove anything you don't need, adjust quantities with a single tap, and organize by category. Your list, your rules.",
+    "faq-q5": "Does it work for families and groups?",
+    "faq-a5": "Yes! Tell Zip It! who's traveling — solo, couple, family with kids, or a baby — and the list adapts automatically. Diapers, kids' medicine, stroller, entertainment — all included when needed.",
+    "faq-q6": "How does the AI know what to suggest?",
+    "faq-a6": "It looks at your destination, travel dates, trip type (beach, business, adventure…), who's going, and the real weather forecast for your trip window. A ski trip to Patagonia in July gets a very different list than a weekend in Miami.",
     "cta-badge":  "Available Now",
     "cta-title":  "Start packing smarter<br><span class='accent'>today. For free.</span>",
     "cta-sub":    "Download Zip It! on the App Store — your first packing list is completely free.",
@@ -87,6 +101,20 @@ const i18n = {
     "plan1-f1": "Listas ilimitadas", "plan1-f2": "Extras com IA", "plan1-f3": "Viagens em grupo e família", "plan1-f4": "Atualizações prioritárias",
     "plan2-badge": "Melhor Oferta", "plan2-name": "Vitalício", "plan2-period": "Pagamento único", "plan2-btn": "Acesso vitalício",
     "plan2-f1": "Tudo do plano Mensal", "plan2-f2": "Todas as funcionalidades futuras", "plan2-f3": "Sem mensalidade", "plan2-f4": "Acesso para sempre",
+    "faq-label": "FAQ",
+    "faq-title": "Ficou com dúvidas?<br><span class='accent'>A gente responde.</span>",
+    "faq-q1": "O Zip It! é realmente grátis?",
+    "faq-a1": "Sim! Sua primeira lista de mala é completamente grátis — sem cartão de crédito. Faça upgrade para Mensal ou Vitalício quando quiser listas ilimitadas e extras com IA.",
+    "faq-q2": "Funciona sem internet?",
+    "faq-a2": "Você precisa de internet para gerar a lista (para buscar dados do clima e rodar a IA). Depois que a lista está pronta, você pode marcar os itens sem conexão — perfeito para quando já estiver viajando.",
+    "faq-q3": "Funciona para viagens internacionais?",
+    "faq-a3": "Com certeza. O Zip It! inclui lembrete de passaporte, seguro viagem, adaptadores, notas sobre câmbio local e sugestões específicas do destino — tudo que você precisa ao cruzar fronteiras.",
+    "faq-q4": "Posso personalizar a lista?",
+    "faq-a4": "100%. Adicione seus próprios itens, remova o que não precisa, ajuste quantidades com um toque e organize por categoria. Sua lista, suas regras.",
+    "faq-q5": "Funciona para famílias e grupos?",
+    "faq-a5": "Sim! Informe quem vai na viagem — sozinho, casal, família com crianças ou bebê — e a lista se adapta automaticamente. Fraldas, remédios infantis, carrinho, entretenimento — tudo incluído quando necessário.",
+    "faq-q6": "Como a IA sabe o que sugerir?",
+    "faq-a6": "Ela analisa seu destino, datas da viagem, tipo de trip (praia, negócios, aventura…), quem vai e a previsão do tempo real para o período. Uma viagem de ski na Patagônia em julho recebe uma lista bem diferente de um fim de semana em Florianópolis.",
     "cta-badge":  "Disponível Agora",
     "cta-title":  "Comece a fazer sua mala<br><span class='accent'>hoje. De graça.</span>",
     "cta-sub":    "Baixe o Zip It! na App Store — sua primeira lista é completamente grátis.",
@@ -118,3 +146,20 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // ── Auto-detect browser language ────────────────────────────
 const browserLang = (navigator.language || 'en').startsWith('pt') ? 'pt' : 'en';
 setLang(browserLang);
+
+// ── FAQ accordion ────────────────────────────────────────────
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    // fecha todos
+    document.querySelectorAll('.faq-question').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    // abre o clicado (se estava fechado)
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.nextElementSibling.classList.add('open');
+    }
+  });
+});
