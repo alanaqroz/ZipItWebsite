@@ -148,18 +148,25 @@ const browserLang = (navigator.language || 'en').startsWith('pt') ? 'pt' : 'en';
 setLang(browserLang);
 
 // ── FAQ accordion ────────────────────────────────────────────
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item   = btn.closest('.faq-item');
+    var answer = btn.nextElementSibling;
+    var isOpen = item.classList.contains('is-open');
+
     // fecha todos
-    document.querySelectorAll('.faq-question').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      b.nextElementSibling.classList.remove('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) {
+      i.classList.remove('is-open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      var a = i.querySelector('.faq-answer');
+      if (a) a.classList.remove('open');
     });
+
     // abre o clicado (se estava fechado)
-    if (!isOpen) {
+    if (!isOpen && answer) {
+      item.classList.add('is-open');
       btn.setAttribute('aria-expanded', 'true');
-      btn.nextElementSibling.classList.add('open');
+      answer.classList.add('open');
     }
   });
 });
